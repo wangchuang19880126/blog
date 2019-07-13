@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>50-js</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            user-select: none;
+        }
+        #app input{
+            display: none;
+        }
+        #app label{
+            cursor: pointer;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <label for="pic">选择图片</label>
+        <input type="file" value="pic" id="pic" multiple>
+    </div>
+    <script>
+        const res = {
+            init() {
+                this.ele = document.querySelector("#pic")
+                this.arr = []
+                this.ele.addEventListener("change", e => {
+                    let file = [...this.ele.files]
+                    file.forEach(item => this.arr.push(item.name))
+                    this.ele.value = ""
+                    this.arr.forEach((item, index, self) => {
+                        self[index] = "./images/" + item
+                    })
+                    let str = JSON.stringify(this.arr)
+                    this.arr = []
+                    console.log(str)
+                    $.ajax({
+                        method: "GET",
+                        url: "http://localhost:3000/trans",
+                        data: str,
+                        success(msg) {
+                            console.log
+                        }
+                    })
+                })
+            }
+        }
+        res.init()
+    </script>
+</body>
+
+</html>

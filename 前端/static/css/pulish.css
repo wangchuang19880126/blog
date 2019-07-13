@@ -1,0 +1,146 @@
+html {
+  --max-width: 1366px;
+  --min-width: 200px;
+  word-spacing: 1px;
+  font-size: 18px;
+  font-size: .9em;
+  white-space: nowrap !important;
+  font-weight: 100 !important;
+}
+.conter {
+  max-width: 1366px;
+  min-width: 200px;
+  margin: 0 auto;
+}
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+}
+div.conter {
+  margin: 0 auto;
+}
+body,
+a:focus,
+input:focus,
+p:focus,
+div:focus { -webkit-tap-highlight-color: transparent; }
+@media screen and (max-width:1366px){
+  #app .main{
+    min-height: 400px !important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: .6em !important; 
+  }
+  .top #appTop .left{
+      display: none !important;
+  }
+  .top #rightnv{
+    display: block;
+  }
+  .main #articleDetail .detail_left{
+    width:100% !important;
+  }
+  .main .right {
+    position: relative !important;
+    width: 100% !important;
+  }
+  #login {
+    width:95% !important;
+  }
+  .main .wrap{
+    width:100% !important;
+  }
+  .top #appTop .right{
+    display: none;
+  }
+  .top #appTop .center{
+    width:25% !important;
+  }
+  .top #appTop .logo{
+    width:30% !important;
+  }
+  .main .none{
+    display: none !important;
+  }
+  .main .width{
+    width:100% !important;
+  }
+  .main #index #articleList .list{
+    display: block !important;
+  }
+  .main #index .left_content{
+    width:100% !important;
+  }
+  .main #index .left_content .banner{
+    width:100% !important;
+  }
+  .main #index #articleList .list .content{
+    width:100%;
+    text-align: center;
+  }
+  .main #index #articleList .list .detail{
+    width:100%;
+  }
+  .main #index #articleList .list .read{
+    width:100%;
+  }
+  
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: .4em !important;
+    /* white-space: normal !important; */
+  }
+  .top #appTop .logo{
+      width:40% !important;
+  }
+  .top #appTop .center{
+    display:none !important;
+  }
+  #appFooter{
+    height: 200px !important;
+  }
+  /* .main #index .notice{
+    display: none !important;
+  } */
+  .main{
+    width:95% !important;
+  }
+ .main #index .top{
+    height: 200px !important;
+  }
+  .main #index .top banner{
+    height: 200px !important;
+  }
+ .main #index .banner .el-carousel{
+      width:100% !important;
+      height: 200px !important;
+      overflow: hidden !important;
+  }
+  .main #index .banner img{
+    height: 200px !important;
+  } 
+  .main #index #ctnv .player{
+    display: none !important;
+  }
+  .main #index #ctnv{
+    width: 100% !important;
+    height:300px !important
+  }
+  .main #index #ctnv .drag{
+   width:100% !important;
+  }
+  .main #index .option #LAY_demo3 img{
+    height:100px !important;
+  }
+}
+/* } 
