@@ -1,15 +1,15 @@
 <template>
   <div id="app" ref="app">
-    <bg/>
+    <bg />
     <hd-nv></hd-nv>
-    <message/>
-    <push-nv/>
+    <message />
+    <push-nv />
     <div class="conter">
       <div class="main conter">
         <transition name="el-zoom-in-center">
           <!-- <el-collapse-transition> -->
           <!-- <keep-alive> -->
-            <router-view></router-view>
+          <router-view></router-view>
           <!-- </keep-alive> -->
           <!-- </el-collapse-transition> -->
         </transition>
@@ -24,17 +24,17 @@ import vm from "./components/global/vm.js";
 const message = () => ({
   component: import("./components/other/message"),
   delay: 200,
-  timeout: 3000
+  timeout: 3000,
 });
 const navHd = () => ({
   component: import("./components/global/nav.vue"),
   delay: 200,
-  timeout: 3000
+  timeout: 3000,
 });
 const pushNv = () => ({
   component: import("./components/chat/push.vue"),
   delay: 200,
-  timeout: 3000
+  timeout: 3000,
 });
 export default {
   name: "App",
@@ -43,18 +43,18 @@ export default {
       bool: false,
       isShow: true,
       right: true,
-      content: []
+      content: [],
     };
   },
   computed: {
     state() {
       return this.$store.state;
-    }
+    },
   },
   components: {
     message,
     navHd,
-    pushNv
+    pushNv,
   },
   watch: {
     $route() {
@@ -67,11 +67,10 @@ export default {
         let obj = this.$store.state;
         window.localStorage.setItem("state", JSON.stringify(obj));
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   created() {
-
     let obj = JSON.parse(window.localStorage.getItem("state")) || [];
     for (let key in this.$store.state) {
       this.$store.state[key] = obj[key];
@@ -79,8 +78,8 @@ export default {
     this.$ajax({
       method: "GET",
       url: "/",
-      withCredentials: true
-    }).then(res => {
+      withCredentials: true,
+    }).then((res) => {
       if (!res.data.uid) {
         //cookie过期
         this.$store.commit("changeLogin", true);
@@ -91,7 +90,7 @@ export default {
         this.$store.commit("changeLogin", false);
       }
     });
-  }
+  },
 };
 </script>
 
