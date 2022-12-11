@@ -16,7 +16,7 @@
       "element-ui": "^2.5.4",
       "less": "^3.9.0",
       "less-loader": "^4.1.0",
-      "qs": "^6.7.0",
+      "qs": "^6.5.3",
       "vue": "^2.6.10",
       "vue-full-calendar": "^2.7.0",
       "vue-jsonp": "^0.1.8",
